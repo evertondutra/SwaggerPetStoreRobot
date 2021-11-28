@@ -6,6 +6,6 @@ Test Setup         Conectar API
 
 Cadastrar um novo usuário
     Cadastrar um novo usuario User2
-    #Conferir o status code "200"
-    #Conferir reason "Ok"
-    #Conferir dados do "usuario"
+    Conferir o status code 200
+    Conferir reason OK
+    Conferir o body da resposta
