@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211128 00:56:28.307" rpa="false" schemaversion="2">
+<suite id="s1" name="testUserPet" source="E:\Projetos Robot\SwaggerPetStoreRobot\tests\testUserPet.robot">
+<test id="s1-t1" name="Cadastrar um novo usuário">
+<kw name="Conectar API" library="Resources" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>SwaggerAPI</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20211128 00:56:28.554" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20211128 00:56:28.554" endtime="20211128 00:56:28.555"/>
+</kw>
+<status status="PASS" starttime="20211128 00:56:28.554" endtime="20211128 00:56:28.555"/>
+</kw>
+<kw name="Cadastrar um novo usuario User2" library="Resources" sourcename="Cadastrar um novo usuario ${USER}">
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${USUARIO}</var>
+<arg>./resources/${USER}.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20211128 00:56:28.556" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 1}</msg>
+<status status="PASS" starttime="20211128 00:56:28.555" endtime="20211128 00:56:28.556"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${HEADERS}</var>
+<arg>content-type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211128 00:56:28.557" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
+<status status="PASS" starttime="20211128 00:56:28.556" endtime="20211128 00:56:28.557"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>SwaggerAPI</arg>
+<arg>user</arg>
+<arg>json=${USUARIO}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20211128 00:56:29.302" level="INFO">POST Request : url=https://petstore.swagger.io/v2/user 
+ path_url=/v2/user 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '166'} 
+ body=b'{"id": 0, "username": "Edu", "firstName": "Eduardo", "lastName": "Dutra", "email": "Eduardo@dutra.com", "password": "11111111", "phone": "333444888", "userStatus": 1}' 
+ </msg>
+<msg timestamp="20211128 00:56:29.303" level="INFO">POST Response : url=https://petstore.swagger.io/v2/user 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 28 Nov 2021 03:56:49 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"9223372036854775807"} 
+ </msg>
+<msg timestamp="20211128 00:56:29.303" level="INFO">C:\Users\shaaz\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20211128 00:56:29.306" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211128 00:56:28.557" endtime="20211128 00:56:29.306"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211128 00:56:29.309" level="INFO">200</msg>
+<status status="PASS" starttime="20211128 00:56:29.307" endtime="20211128 00:56:29.309"/>
+</kw>
+<status status="PASS" starttime="20211128 00:56:28.555" endtime="20211128 00:56:29.310"/>
+</kw>
+<status status="PASS" starttime="20211128 00:56:28.553" endtime="20211128 00:56:29.311"/>
+</test>
+<status status="PASS" starttime="20211128 00:56:28.309" endtime="20211128 00:56:29.316"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="testUserPet">testUserPet</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

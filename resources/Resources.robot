@@ -1,27 +1,23 @@
 *** Settings ***
 Library        RequestsLibrary
 Library        Collections
+Library        JSONLibrary
+
 
 
 *** Variables ***
 ${URL}         https://petstore.swagger.io/v2/
-&{USER1}       id=0
-...    username=Tone
-...    firstName=Everton
-...    lastName=Dutra
-...    email=everton@dutra.com
-...    password=654321
-...    phone=11122233
-...    userStatus=1
 
 *** Keywords ***
 Conectar API
     Create Session    SwaggerAPI    ${URL}
 
 
-Cadastrar um novo "usuario"
+Cadastrar um novo usuario ${USER}
+
+    ${USUARIO}      Load JSON From File     ./resources/${USER}.json
     ${HEADERS}     Create Dictionary       content-type=application/json
     ${RESPOSTA}    POST On Session         SwaggerAPI                        user
-    ...            json=${USER1}
+    ...            json=${USUARIO} 
     ...            headers=${HEADERS}
-    Log            ${RESPOSTA}
+    Log            ${RESPOSTA.status_code}
