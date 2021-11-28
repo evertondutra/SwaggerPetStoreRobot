@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211128 01:17:46.270" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211128 02:02:19.884" rpa="false" schemaversion="2">
 <suite id="s1" name="testUserPet" source="E:\Projetos Robot\SwaggerPetStoreRobot\tests\testUserPet.robot">
 <test id="s1-t1" name="Cadastrar um novo usuário">
 <kw name="Conectar API" library="Resources" type="SETUP">
@@ -7,25 +7,25 @@
 <arg>SwaggerAPI</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20211128 01:17:46.477" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20211128 01:17:46.476" endtime="20211128 01:17:46.477"/>
+<msg timestamp="20211128 02:02:20.105" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20211128 02:02:20.104" endtime="20211128 02:02:20.105"/>
 </kw>
-<status status="PASS" starttime="20211128 01:17:46.476" endtime="20211128 01:17:46.477"/>
+<status status="PASS" starttime="20211128 02:02:20.104" endtime="20211128 02:02:20.105"/>
 </kw>
-<kw name="Cadastrar um novo usuario User2" library="Resources" sourcename="Cadastrar um novo usuario ${USER}">
+<kw name="Cadastrar um novo usuario ${USUARIO}" library="Resources" sourcename="Cadastrar um novo usuario ${USER}">
 <kw name="Load JSON From File" library="JSONLibrary">
 <var>${USUARIO}</var>
 <arg>./resources/${USER}.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20211128 01:17:46.479" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 1}</msg>
-<status status="PASS" starttime="20211128 01:17:46.478" endtime="20211128 01:17:46.479"/>
+<msg timestamp="20211128 02:02:20.107" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 1}</msg>
+<status status="PASS" starttime="20211128 02:02:20.106" endtime="20211128 02:02:20.107"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${HEADERS}</var>
 <arg>content-type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20211128 01:17:46.480" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
-<status status="PASS" starttime="20211128 01:17:46.480" endtime="20211128 01:17:46.480"/>
+<msg timestamp="20211128 02:02:20.108" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
+<status status="PASS" starttime="20211128 02:02:20.108" endtime="20211128 02:02:20.108"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${RESPOSTA}</var>
@@ -34,86 +34,191 @@
 <arg>json=${USUARIO}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20211128 01:17:47.181" level="INFO">POST Request : url=https://petstore.swagger.io/v2/user 
+<msg timestamp="20211128 02:02:20.770" level="INFO">POST Request : url=https://petstore.swagger.io/v2/user 
  path_url=/v2/user 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '166'} 
  body=b'{"id": 0, "username": "Edu", "firstName": "Eduardo", "lastName": "Dutra", "email": "Eduardo@dutra.com", "password": "11111111", "phone": "333444888", "userStatus": 1}' 
  </msg>
-<msg timestamp="20211128 01:17:47.182" level="INFO">POST Response : url=https://petstore.swagger.io/v2/user 
+<msg timestamp="20211128 02:02:20.770" level="INFO">POST Response : url=https://petstore.swagger.io/v2/user 
  status=200, reason=OK 
- headers={'Date': 'Sun, 28 Nov 2021 04:18:07 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ headers={'Date': 'Sun, 28 Nov 2021 05:02:41 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
  body={"code":200,"type":"unknown","message":"9223372036854775807"} 
  </msg>
-<msg timestamp="20211128 01:17:47.182" level="INFO">C:\Users\shaaz\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20211128 02:02:20.770" level="INFO">C:\Users\shaaz\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20211128 01:17:47.183" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211128 01:17:46.480" endtime="20211128 01:17:47.183"/>
+<msg timestamp="20211128 02:02:20.771" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211128 02:02:20.108" endtime="20211128 02:02:20.771"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${RESPOSTA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211128 01:17:47.184" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211128 01:17:47.183" endtime="20211128 01:17:47.184"/>
+<msg timestamp="20211128 02:02:20.771" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211128 02:02:20.771" endtime="20211128 02:02:20.771"/>
 </kw>
-<status status="PASS" starttime="20211128 01:17:46.478" endtime="20211128 01:17:47.184"/>
+<status status="PASS" starttime="20211128 02:02:20.106" endtime="20211128 02:02:20.771"/>
 </kw>
 <kw name="Conferir o status code 200" library="Resources" sourcename="Conferir o status code ${STATUS_CODE_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.status_code}</arg>
 <arg>${STATUS_CODE_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211128 01:17:47.187" level="INFO">Argument types are:
+<msg timestamp="20211128 02:02:20.773" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211128 01:17:47.185" endtime="20211128 01:17:47.187"/>
+<status status="PASS" starttime="20211128 02:02:20.772" endtime="20211128 02:02:20.773"/>
 </kw>
-<status status="PASS" starttime="20211128 01:17:47.185" endtime="20211128 01:17:47.187"/>
+<status status="PASS" starttime="20211128 02:02:20.772" endtime="20211128 02:02:20.773"/>
 </kw>
 <kw name="Conferir reason OK" library="Resources" sourcename="Conferir reason ${REASON_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.reason}</arg>
 <arg>${REASON_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211128 01:17:47.188" endtime="20211128 01:17:47.190"/>
+<status status="PASS" starttime="20211128 02:02:20.774" endtime="20211128 02:02:20.775"/>
 </kw>
-<status status="PASS" starttime="20211128 01:17:47.188" endtime="20211128 01:17:47.190"/>
+<status status="PASS" starttime="20211128 02:02:20.774" endtime="20211128 02:02:20.775"/>
 </kw>
 <kw name="Conferir o body da resposta" library="Resources">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["message"]}</arg>
 <arg>9223372036854775807</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211128 01:17:47.191" endtime="20211128 01:17:47.192"/>
+<status status="PASS" starttime="20211128 02:02:20.775" endtime="20211128 02:02:20.776"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["code"]}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211128 01:17:47.194" level="INFO">Argument types are:
+<msg timestamp="20211128 02:02:20.777" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211128 01:17:47.193" endtime="20211128 01:17:47.194"/>
+<status status="PASS" starttime="20211128 02:02:20.776" endtime="20211128 02:02:20.777"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["type"]}</arg>
 <arg>unknown</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211128 01:17:47.194" endtime="20211128 01:17:47.195"/>
+<status status="PASS" starttime="20211128 02:02:20.777" endtime="20211128 02:02:20.778"/>
 </kw>
-<status status="PASS" starttime="20211128 01:17:47.190" endtime="20211128 01:17:47.195"/>
+<status status="PASS" starttime="20211128 02:02:20.775" endtime="20211128 02:02:20.778"/>
 </kw>
-<status status="PASS" starttime="20211128 01:17:46.475" endtime="20211128 01:17:47.196"/>
+<tag>POST</tag>
+<status status="PASS" starttime="20211128 02:02:20.103" endtime="20211128 02:02:20.779"/>
 </test>
-<status status="PASS" starttime="20211128 01:17:46.271" endtime="20211128 01:17:47.199"/>
+<test id="s1-t2" name="Consultar um usuário">
+<kw name="Conectar API" library="Resources" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>SwaggerAPI</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20211128 02:02:20.781" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20211128 02:02:20.781" endtime="20211128 02:02:20.781"/>
+</kw>
+<status status="PASS" starttime="20211128 02:02:20.781" endtime="20211128 02:02:20.781"/>
+</kw>
+<kw name="Consultar um usuário ${USUARIO}" library="Resources" sourcename="Consultar um usuário ${USERNAME}">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>SwaggerAPI</arg>
+<arg>user/${USERNAME}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20211128 02:02:21.379" level="INFO">GET Request : url=https://petstore.swagger.io/v2/user/Edu 
+ path_url=/v2/user/Edu 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20211128 02:02:21.380" level="INFO">GET Response : url=https://petstore.swagger.io/v2/user/Edu 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 28 Nov 2021 05:02:41 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":9223372036854775807,"username":"Edu","firstName":"Eduardo","lastName":"Dutra","email":"Eduardo@dutra.com","password":"11111111","phone":"333444888","userStatus":1} 
+ </msg>
+<msg timestamp="20211128 02:02:21.380" level="INFO">C:\Users\shaaz\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'petstore.swagger.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20211128 02:02:21.382" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211128 02:02:20.782" endtime="20211128 02:02:21.383"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211128 02:02:21.385" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211128 02:02:21.383" endtime="20211128 02:02:21.385"/>
+</kw>
+<status status="PASS" starttime="20211128 02:02:20.782" endtime="20211128 02:02:21.385"/>
+</kw>
+<kw name="Conferir o status code 200" library="Resources" sourcename="Conferir o status code ${STATUS_CODE_ESPERADO}">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUS_CODE_ESPERADO}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20211128 02:02:21.391" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20211128 02:02:21.388" endtime="20211128 02:02:21.391"/>
+</kw>
+<status status="PASS" starttime="20211128 02:02:21.387" endtime="20211128 02:02:21.392"/>
+</kw>
+<kw name="Conferir reason OK" library="Resources" sourcename="Conferir reason ${REASON_ESPERADO}">
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.reason}</arg>
+<arg>${REASON_ESPERADO}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211128 02:02:21.394" endtime="20211128 02:02:21.398"/>
+</kw>
+<status status="PASS" starttime="20211128 02:02:21.393" endtime="20211128 02:02:21.398"/>
+</kw>
+<kw name="Conferir resposta do GET do usuário ${USUARIO}" library="Resources" sourcename="Conferir resposta do GET do usuário ${USER}">
+<kw name="Load JSON From File" library="JSONLibrary">
+<var>${USUARIO}</var>
+<arg>./resources/${USER}.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20211128 02:02:21.404" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 1}</msg>
+<status status="PASS" starttime="20211128 02:02:21.401" endtime="20211128 02:02:21.404"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>item</arg>
+<arg>${RESPOSTA.json()}[id]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20211128 02:02:21.407" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20211128 02:02:21.404" endtime="20211128 02:02:21.407"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>username</arg>
+<arg>${USUARIO}[username]</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20211128 02:02:21.407" endtime="20211128 02:02:21.410"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>lastName</arg>
+<arg>${USUARIO}[lastName]</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20211128 02:02:21.410" endtime="20211128 02:02:21.413"/>
+</kw>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>email</arg>
+<arg>${USUARIO}[email]</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20211128 02:02:21.413" endtime="20211128 02:02:21.415"/>
+</kw>
+<status status="PASS" starttime="20211128 02:02:21.400" endtime="20211128 02:02:21.415"/>
+</kw>
+<tag>GET</tag>
+<status status="PASS" starttime="20211128 02:02:20.780" endtime="20211128 02:02:21.417"/>
+</test>
+<status status="PASS" starttime="20211128 02:02:19.885" endtime="20211128 02:02:21.420"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">GET</stat>
+<stat pass="1" fail="0" skip="0">POST</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="testUserPet">testUserPet</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="testUserPet">testUserPet</stat>
 </suite>
 </statistics>
 <errors>
