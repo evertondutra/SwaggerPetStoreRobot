@@ -11,7 +11,7 @@ ${URL}         https://petstore.swagger.io/v2/
 
 *** Keywords ***
 Conectar API
-    Create Session    SwaggerAPI    ${URL}
+    Create Session    SwaggerAPI    ${URL}    disable_warnings=1    max_retries=5    retry_status_list=[404]
 
 
 ## POST ##
@@ -27,7 +27,6 @@ Cadastrar um novo usuario ${USER}
     Set Test Variable                       ${RESPOSTA}
     ${MESSAGE}           Set Variable       ${RESPOSTA.json()["message"]}
     Set Global Variable        ${MESSAGE} 
-    Log To Console    ${MESSAGE}
 ## GET ##
 Consultar um usuário ${USER}
     ${USUARIO}     Load JSON From File      ./resources/${USER}.json
@@ -46,6 +45,10 @@ Alterar um usuário ${USER}
     Set Test Variable                       ${USUARIO}
     Set Test Variable                       ${RESPOSTA}
 
+Deletar um usuário ${USER}
+    
+    ${RESPOSTA}         DELETE On Session    SwaggerAPI                      user/${USER}   
+    Set Test Variable                       ${RESPOSTA}
 
 # CONFERENCIAS #
 
