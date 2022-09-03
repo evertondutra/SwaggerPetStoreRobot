@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211202 03:21:17.952" rpa="false" schemaversion="2">
-<suite id="s1" name="testUserPet" source="E:\Projetos Robot\SwaggerPetStoreRobot\tests\testUserPet.robot">
-<test id="s1-t1" name="Cadastrar um novo usuário">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220902 17:55:35.993" rpa="false" schemaversion="3">
+<suite id="s1" name="testUserPet" source="C:\Users\edutra\Desktop\pipeline\tests\testUserPet.robot">
+<test id="s1-t1" name="Cadastrar um novo usuário" line="12">
 <kw name="Conectar API" library="Resources" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>SwaggerAPI</arg>
@@ -10,31 +10,31 @@
 <arg>max_retries=5</arg>
 <arg>retry_status_list=[404]</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20211202 03:21:18.159" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20211202 03:21:18.159" endtime="20211202 03:21:18.159"/>
+<msg timestamp="20220902 17:55:36.156" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 17:55:36.155" endtime="20220902 17:55:36.156"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.158" endtime="20211202 03:21:18.159"/>
+<status status="PASS" starttime="20220902 17:55:36.155" endtime="20220902 17:55:36.156"/>
 </kw>
 <kw name="Cadastrar um novo usuario ${NOME_USUARIO}" library="Resources" sourcename="Cadastrar um novo usuario ${USER}">
-<kw name="Load JSON From File" library="JSONLibrary">
+<kw name="Load Json From File" library="JSONLibrary">
 <var>${USUARIO}</var>
 <arg>./resources/${USER}.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20211202 03:21:18.161" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
-<status status="PASS" starttime="20211202 03:21:18.160" endtime="20211202 03:21:18.161"/>
+<msg timestamp="20220902 17:55:36.158" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
+<status status="PASS" starttime="20220902 17:55:36.157" endtime="20220902 17:55:36.158"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${USUARIO}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:18.162" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
-<status status="PASS" starttime="20211202 03:21:18.161" endtime="20211202 03:21:18.162"/>
+<msg timestamp="20220902 17:55:36.158" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
+<status status="PASS" starttime="20220902 17:55:36.158" endtime="20220902 17:55:36.158"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${HEADERS}</var>
 <arg>content-type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20211202 03:21:18.162" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
-<status status="PASS" starttime="20211202 03:21:18.162" endtime="20211202 03:21:18.162"/>
+<msg timestamp="20220902 17:55:36.160" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
+<status status="PASS" starttime="20220902 17:55:36.158" endtime="20220902 17:55:36.160"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${RESPOSTA}</var>
@@ -43,90 +43,90 @@
 <arg>json=${USUARIO}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20211202 03:21:18.783" level="INFO">POST Request : url=https://petstore.swagger.io/v2/user 
+<msg timestamp="20220902 17:55:36.916" level="INFO">POST Request : url=https://petstore.swagger.io/v2/user 
  path_url=/v2/user 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '164'} 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '164'} 
  body=b'{"id": 0, "username": "Tone", "firstName": "Everton", "lastName": "Dutra", "email": "everton@dutra.com", "password": "654321", "phone": "11122233", "userStatus": 0}' 
  </msg>
-<msg timestamp="20211202 03:21:18.784" level="INFO">POST Response : url=https://petstore.swagger.io/v2/user 
+<msg timestamp="20220902 17:55:36.916" level="INFO">POST Response : url=https://petstore.swagger.io/v2/user 
  status=200, reason=OK 
- headers={'Date': 'Thu, 02 Dec 2021 06:21:19 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"code":200,"type":"unknown","message":"9223372036854771880"} 
+ headers={'Date': 'Fri, 02 Sep 2022 20:55:36 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"9222968140497255210"} 
  </msg>
-<msg timestamp="20211202 03:21:18.784" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:18.163" endtime="20211202 03:21:18.784"/>
+<msg timestamp="20220902 17:55:36.916" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:36.160" endtime="20220902 17:55:36.917"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${RESPOSTA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:18.784" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:18.784" endtime="20211202 03:21:18.784"/>
+<msg timestamp="20220902 17:55:36.917" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:36.917" endtime="20220902 17:55:36.917"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${MESSAGE}</var>
 <arg>${RESPOSTA.json()["message"]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211202 03:21:18.785" level="INFO">${MESSAGE} = 9223372036854771880</msg>
-<status status="PASS" starttime="20211202 03:21:18.784" endtime="20211202 03:21:18.785"/>
+<msg timestamp="20220902 17:55:36.919" level="INFO">${MESSAGE} = 9222968140497255210</msg>
+<status status="PASS" starttime="20220902 17:55:36.918" endtime="20220902 17:55:36.919"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${MESSAGE}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20211202 03:21:18.785" level="INFO">${MESSAGE} = 9223372036854771880</msg>
-<status status="PASS" starttime="20211202 03:21:18.785" endtime="20211202 03:21:18.785"/>
+<msg timestamp="20220902 17:55:36.919" level="INFO">${MESSAGE} = 9222968140497255210</msg>
+<status status="PASS" starttime="20220902 17:55:36.919" endtime="20220902 17:55:36.919"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.160" endtime="20211202 03:21:18.785"/>
+<status status="PASS" starttime="20220902 17:55:36.157" endtime="20220902 17:55:36.920"/>
 </kw>
 <kw name="Conferir o status code 200" library="Resources" sourcename="Conferir o status code ${STATUS_CODE_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.status_code}</arg>
 <arg>${STATUS_CODE_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:18.787" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:36.922" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:18.786" endtime="20211202 03:21:18.787"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:36.921" endtime="20220902 17:55:36.922"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.786" endtime="20211202 03:21:18.787"/>
+<status status="PASS" starttime="20220902 17:55:36.921" endtime="20220902 17:55:36.922"/>
 </kw>
 <kw name="Conferir reason OK" library="Resources" sourcename="Conferir reason ${REASON_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.reason}</arg>
 <arg>${REASON_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:18.788" endtime="20211202 03:21:18.788"/>
+<status status="PASS" starttime="20220902 17:55:36.923" endtime="20220902 17:55:36.924"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.787" endtime="20211202 03:21:18.789"/>
+<status status="PASS" starttime="20220902 17:55:36.923" endtime="20220902 17:55:36.924"/>
 </kw>
 <kw name="Conferir o body da resposta" library="Resources">
 <kw name="Should Not Be Empty" library="BuiltIn">
 <arg>item</arg>
 <arg>${RESPOSTA.json()}[message]</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20211202 03:21:18.790" level="INFO">Length is 4</msg>
-<status status="PASS" starttime="20211202 03:21:18.789" endtime="20211202 03:21:18.790"/>
+<msg timestamp="20220902 17:55:36.927" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20220902 17:55:36.925" endtime="20220902 17:55:36.927"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["code"]}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:18.791" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:36.928" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:18.790" endtime="20211202 03:21:18.791"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:36.927" endtime="20220902 17:55:36.928"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["type"]}</arg>
 <arg>unknown</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:18.791" endtime="20211202 03:21:18.792"/>
+<status status="PASS" starttime="20220902 17:55:36.928" endtime="20220902 17:55:36.929"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.789" endtime="20211202 03:21:18.792"/>
+<status status="PASS" starttime="20220902 17:55:36.925" endtime="20220902 17:55:36.929"/>
 </kw>
 <tag>POST</tag>
-<status status="PASS" starttime="20211202 03:21:18.158" endtime="20211202 03:21:18.793"/>
+<status status="PASS" starttime="20220902 17:55:36.154" endtime="20220902 17:55:36.929"/>
 </test>
-<test id="s1-t2" name="Consultar um usuário">
+<test id="s1-t2" name="Consultar um usuário" line="19">
 <kw name="Conectar API" library="Resources" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>SwaggerAPI</arg>
@@ -135,107 +135,107 @@
 <arg>max_retries=5</arg>
 <arg>retry_status_list=[404]</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20211202 03:21:18.795" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20211202 03:21:18.795" endtime="20211202 03:21:18.796"/>
+<msg timestamp="20220902 17:55:36.933" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 17:55:36.932" endtime="20220902 17:55:36.933"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.795" endtime="20211202 03:21:18.796"/>
+<status status="PASS" starttime="20220902 17:55:36.932" endtime="20220902 17:55:36.933"/>
 </kw>
 <kw name="Consultar um usuário ${NOME_USUARIO}" library="Resources" sourcename="Consultar um usuário ${USER}">
-<kw name="Load JSON From File" library="JSONLibrary">
+<kw name="Load Json From File" library="JSONLibrary">
 <var>${USUARIO}</var>
 <arg>./resources/${USER}.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20211202 03:21:18.797" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
-<status status="PASS" starttime="20211202 03:21:18.796" endtime="20211202 03:21:18.797"/>
+<msg timestamp="20220902 17:55:36.935" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
+<status status="PASS" starttime="20220902 17:55:36.934" endtime="20220902 17:55:36.935"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${USUARIO}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:18.797" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
-<status status="PASS" starttime="20211202 03:21:18.797" endtime="20211202 03:21:18.798"/>
+<msg timestamp="20220902 17:55:36.935" level="INFO">${USUARIO} = {'id': 0, 'username': 'Tone', 'firstName': 'Everton', 'lastName': 'Dutra', 'email': 'everton@dutra.com', 'password': '654321', 'phone': '11122233', 'userStatus': 0}</msg>
+<status status="PASS" starttime="20220902 17:55:36.935" endtime="20220902 17:55:36.935"/>
 </kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${RESPOSTA}</var>
 <arg>SwaggerAPI</arg>
 <arg>user/${USER}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20211202 03:21:19.590" level="INFO">GET Request : url=https://petstore.swagger.io/v2/user/Tone 
+<msg timestamp="20220902 17:55:37.632" level="INFO">GET Request : url=https://petstore.swagger.io/v2/user/Tone 
  path_url=/v2/user/Tone 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20211202 03:21:19.590" level="INFO">GET Response : url=https://petstore.swagger.io/v2/user/Tone 
+<msg timestamp="20220902 17:55:37.632" level="INFO">GET Response : url=https://petstore.swagger.io/v2/user/Tone 
  status=200, reason=OK 
- headers={'Date': 'Thu, 02 Dec 2021 06:21:20 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"id":9223372036854771806,"username":"Tone","firstName":"Everton","lastName":"Dutra","email":"everton@dutra.com","password":"654321","phone":"11122233","userStatus":0} 
+ headers={'Date': 'Fri, 02 Sep 2022 20:55:37 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":9222968140497255210,"username":"Tone","firstName":"Everton","lastName":"Dutra","email":"everton@dutra.com","password":"654321","phone":"11122233","userStatus":0} 
  </msg>
-<msg timestamp="20211202 03:21:19.590" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:18.798" endtime="20211202 03:21:19.591"/>
+<msg timestamp="20220902 17:55:37.632" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:36.936" endtime="20220902 17:55:37.632"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${RESPOSTA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:19.591" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:19.591" endtime="20211202 03:21:19.591"/>
+<msg timestamp="20220902 17:55:37.633" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:37.632" endtime="20220902 17:55:37.633"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:18.796" endtime="20211202 03:21:19.591"/>
+<status status="PASS" starttime="20220902 17:55:36.934" endtime="20220902 17:55:37.633"/>
 </kw>
 <kw name="Conferir o status code 200" library="Resources" sourcename="Conferir o status code ${STATUS_CODE_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.status_code}</arg>
 <arg>${STATUS_CODE_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:19.593" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:37.635" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:19.592" endtime="20211202 03:21:19.593"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:37.635" endtime="20220902 17:55:37.635"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:19.592" endtime="20211202 03:21:19.593"/>
+<status status="PASS" starttime="20220902 17:55:37.634" endtime="20220902 17:55:37.636"/>
 </kw>
 <kw name="Conferir reason OK" library="Resources" sourcename="Conferir reason ${REASON_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.reason}</arg>
 <arg>${REASON_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:19.594" endtime="20211202 03:21:19.594"/>
+<status status="PASS" starttime="20220902 17:55:37.638" endtime="20220902 17:55:37.638"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:19.593" endtime="20211202 03:21:19.594"/>
+<status status="PASS" starttime="20220902 17:55:37.636" endtime="20220902 17:55:37.638"/>
 </kw>
 <kw name="Conferir resposta do body ${NOME_USUARIO}" library="Resources" sourcename="Conferir resposta do body ${NOME_USUARIO}">
 <kw name="Should Not Be Empty" library="BuiltIn">
 <arg>item</arg>
 <arg>${RESPOSTA.json()}[id]</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20211202 03:21:19.596" level="INFO">Length is 4</msg>
-<status status="PASS" starttime="20211202 03:21:19.595" endtime="20211202 03:21:19.596"/>
+<msg timestamp="20220902 17:55:37.641" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20220902 17:55:37.640" endtime="20220902 17:55:37.641"/>
 </kw>
 <kw name="Dictionary Should Contain Item" library="Collections">
 <arg>${RESPOSTA.json()}</arg>
 <arg>username</arg>
 <arg>${USUARIO}[username]</arg>
 <doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
-<status status="PASS" starttime="20211202 03:21:19.596" endtime="20211202 03:21:19.597"/>
+<status status="PASS" starttime="20220902 17:55:37.641" endtime="20220902 17:55:37.642"/>
 </kw>
 <kw name="Dictionary Should Contain Item" library="Collections">
 <arg>${RESPOSTA.json()}</arg>
 <arg>lastName</arg>
 <arg>${USUARIO}[lastName]</arg>
 <doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
-<status status="PASS" starttime="20211202 03:21:19.597" endtime="20211202 03:21:19.597"/>
+<status status="PASS" starttime="20220902 17:55:37.642" endtime="20220902 17:55:37.643"/>
 </kw>
 <kw name="Dictionary Should Contain Item" library="Collections">
 <arg>${RESPOSTA.json()}</arg>
 <arg>email</arg>
 <arg>${USUARIO}[email]</arg>
 <doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
-<status status="PASS" starttime="20211202 03:21:19.598" endtime="20211202 03:21:19.599"/>
+<status status="PASS" starttime="20220902 17:55:37.643" endtime="20220902 17:55:37.643"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:19.595" endtime="20211202 03:21:19.599"/>
+<status status="PASS" starttime="20220902 17:55:37.639" endtime="20220902 17:55:37.644"/>
 </kw>
 <tag>GET</tag>
-<status status="PASS" starttime="20211202 03:21:18.794" endtime="20211202 03:21:19.599"/>
+<status status="PASS" starttime="20220902 17:55:36.931" endtime="20220902 17:55:37.645"/>
 </test>
-<test id="s1-t3" name="Alterar um usuário">
+<test id="s1-t3" name="Alterar um usuário" line="26">
 <kw name="Conectar API" library="Resources" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>SwaggerAPI</arg>
@@ -244,25 +244,25 @@
 <arg>max_retries=5</arg>
 <arg>retry_status_list=[404]</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20211202 03:21:19.601" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20211202 03:21:19.601" endtime="20211202 03:21:19.601"/>
+<msg timestamp="20220902 17:55:37.650" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 17:55:37.649" endtime="20220902 17:55:37.650"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:19.601" endtime="20211202 03:21:19.601"/>
+<status status="PASS" starttime="20220902 17:55:37.649" endtime="20220902 17:55:37.651"/>
 </kw>
 <kw name="Alterar um usuário ${NOME_USUARIO}" library="Resources" sourcename="Alterar um usuário ${USER}">
-<kw name="Load JSON From File" library="JSONLibrary">
+<kw name="Load Json From File" library="JSONLibrary">
 <var>${USUARIO}</var>
 <arg>./resources/Novo_Usuario.json</arg>
 <doc>Load JSON from file.</doc>
-<msg timestamp="20211202 03:21:19.603" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 0}</msg>
-<status status="PASS" starttime="20211202 03:21:19.602" endtime="20211202 03:21:19.603"/>
+<msg timestamp="20220902 17:55:37.652" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 0}</msg>
+<status status="PASS" starttime="20220902 17:55:37.652" endtime="20220902 17:55:37.652"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${HEADERS}</var>
 <arg>content-type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20211202 03:21:19.604" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
-<status status="PASS" starttime="20211202 03:21:19.603" endtime="20211202 03:21:19.604"/>
+<msg timestamp="20220902 17:55:37.652" level="INFO">${HEADERS} = {'content-type': 'application/json'}</msg>
+<status status="PASS" starttime="20220902 17:55:37.652" endtime="20220902 17:55:37.652"/>
 </kw>
 <kw name="PUT On Session" library="RequestsLibrary">
 <var>${RESPOSTA}</var>
@@ -271,83 +271,83 @@
 <arg>json=${USUARIO}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20211202 03:21:20.287" level="INFO">PUT Request : url=https://petstore.swagger.io/v2/user/Tone 
+<msg timestamp="20220902 17:55:38.322" level="INFO">PUT Request : url=https://petstore.swagger.io/v2/user/Tone 
  path_url=/v2/user/Tone 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '166'} 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/json', 'Content-Length': '166'} 
  body=b'{"id": 0, "username": "Edu", "firstName": "Eduardo", "lastName": "Dutra", "email": "Eduardo@dutra.com", "password": "11111111", "phone": "333444888", "userStatus": 0}' 
  </msg>
-<msg timestamp="20211202 03:21:20.287" level="INFO">PUT Response : url=https://petstore.swagger.io/v2/user/Tone 
+<msg timestamp="20220902 17:55:38.322" level="INFO">PUT Response : url=https://petstore.swagger.io/v2/user/Tone 
  status=200, reason=OK 
- headers={'Date': 'Thu, 02 Dec 2021 06:21:21 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"code":200,"type":"unknown","message":"9223372036854775807"} 
+ headers={'Date': 'Fri, 02 Sep 2022 20:55:38 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"9222968140497255211"} 
  </msg>
-<msg timestamp="20211202 03:21:20.287" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:19.604" endtime="20211202 03:21:20.287"/>
+<msg timestamp="20220902 17:55:38.322" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:37.652" endtime="20220902 17:55:38.322"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${USUARIO}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:20.288" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 0}</msg>
-<status status="PASS" starttime="20211202 03:21:20.287" endtime="20211202 03:21:20.288"/>
+<msg timestamp="20220902 17:55:38.322" level="INFO">${USUARIO} = {'id': 0, 'username': 'Edu', 'firstName': 'Eduardo', 'lastName': 'Dutra', 'email': 'Eduardo@dutra.com', 'password': '11111111', 'phone': '333444888', 'userStatus': 0}</msg>
+<status status="PASS" starttime="20220902 17:55:38.322" endtime="20220902 17:55:38.323"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${RESPOSTA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:20.288" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:20.288" endtime="20211202 03:21:20.288"/>
+<msg timestamp="20220902 17:55:38.323" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:38.323" endtime="20220902 17:55:38.323"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:19.602" endtime="20211202 03:21:20.288"/>
+<status status="PASS" starttime="20220902 17:55:37.651" endtime="20220902 17:55:38.323"/>
 </kw>
 <kw name="Conferir o status code 200" library="Resources" sourcename="Conferir o status code ${STATUS_CODE_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.status_code}</arg>
 <arg>${STATUS_CODE_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:20.290" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:38.324" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:20.289" endtime="20211202 03:21:20.290"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:38.324" endtime="20220902 17:55:38.324"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:20.289" endtime="20211202 03:21:20.290"/>
+<status status="PASS" starttime="20220902 17:55:38.323" endtime="20220902 17:55:38.324"/>
 </kw>
 <kw name="Conferir reason OK" library="Resources" sourcename="Conferir reason ${REASON_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.reason}</arg>
 <arg>${REASON_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:20.290" endtime="20211202 03:21:20.291"/>
+<status status="PASS" starttime="20220902 17:55:38.325" endtime="20220902 17:55:38.326"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:20.290" endtime="20211202 03:21:20.291"/>
+<status status="PASS" starttime="20220902 17:55:38.325" endtime="20220902 17:55:38.326"/>
 </kw>
 <kw name="Conferir o body da resposta" library="Resources">
 <kw name="Should Not Be Empty" library="BuiltIn">
 <arg>item</arg>
 <arg>${RESPOSTA.json()}[message]</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20211202 03:21:20.292" level="INFO">Length is 4</msg>
-<status status="PASS" starttime="20211202 03:21:20.292" endtime="20211202 03:21:20.293"/>
+<msg timestamp="20220902 17:55:38.328" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20220902 17:55:38.327" endtime="20220902 17:55:38.328"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["code"]}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:20.293" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:38.328" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:20.293" endtime="20211202 03:21:20.293"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:38.328" endtime="20220902 17:55:38.328"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["type"]}</arg>
 <arg>unknown</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:20.293" endtime="20211202 03:21:20.294"/>
+<status status="PASS" starttime="20220902 17:55:38.329" endtime="20220902 17:55:38.329"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:20.292" endtime="20211202 03:21:20.294"/>
+<status status="PASS" starttime="20220902 17:55:38.326" endtime="20220902 17:55:38.329"/>
 </kw>
 <tag>PUT</tag>
-<status status="PASS" starttime="20211202 03:21:19.600" endtime="20211202 03:21:20.295"/>
+<status status="PASS" starttime="20220902 17:55:37.647" endtime="20220902 17:55:38.330"/>
 </test>
-<test id="s1-t4" name="Deletar um usuário">
+<test id="s1-t4" name="Deletar um usuário" line="33">
 <kw name="Conectar API" library="Resources" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>SwaggerAPI</arg>
@@ -356,10 +356,10 @@
 <arg>max_retries=5</arg>
 <arg>retry_status_list=[404]</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20211202 03:21:20.297" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20211202 03:21:20.297" endtime="20211202 03:21:20.297"/>
+<msg timestamp="20220902 17:55:38.334" level="INFO">Creating Session using : alias=SwaggerAPI, url=https://petstore.swagger.io/v2/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 17:55:38.333" endtime="20220902 17:55:38.334"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:20.297" endtime="20211202 03:21:20.297"/>
+<status status="PASS" starttime="20220902 17:55:38.333" endtime="20220902 17:55:38.334"/>
 </kw>
 <kw name="Deletar um usuário ${NOME_USUARIO}" library="Resources" sourcename="Deletar um usuário ${USER}">
 <kw name="DELETE On Session" library="RequestsLibrary">
@@ -367,77 +367,77 @@
 <arg>SwaggerAPI</arg>
 <arg>user/${USER}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20211202 03:21:21.041" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/user/Tone 
+<msg timestamp="20220902 17:55:38.998" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/user/Tone 
  path_url=/v2/user/Tone 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20211202 03:21:21.041" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/user/Tone 
+<msg timestamp="20220902 17:55:38.998" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/user/Tone 
  status=200, reason=OK 
- headers={'Date': 'Thu, 02 Dec 2021 06:21:22 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ headers={'Date': 'Fri, 02 Sep 2022 20:55:38 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
  body={"code":200,"type":"unknown","message":"Tone"} 
  </msg>
-<msg timestamp="20211202 03:21:21.042" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:20.298" endtime="20211202 03:21:21.042"/>
+<msg timestamp="20220902 17:55:38.999" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:38.335" endtime="20220902 17:55:38.999"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${RESPOSTA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20211202 03:21:21.042" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:21.042" endtime="20211202 03:21:21.042"/>
+<msg timestamp="20220902 17:55:38.999" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:38.999" endtime="20220902 17:55:38.999"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:20.298" endtime="20211202 03:21:21.042"/>
+<status status="PASS" starttime="20220902 17:55:38.335" endtime="20220902 17:55:39.000"/>
 </kw>
 <kw name="Conferir o status code 200" library="Resources" sourcename="Conferir o status code ${STATUS_CODE_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.status_code}</arg>
 <arg>${STATUS_CODE_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:21.043" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:39.002" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:21.042" endtime="20211202 03:21:21.043"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:39.001" endtime="20220902 17:55:39.002"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:21.042" endtime="20211202 03:21:21.043"/>
+<status status="PASS" starttime="20220902 17:55:39.001" endtime="20220902 17:55:39.002"/>
 </kw>
 <kw name="Conferir reason OK" library="Resources" sourcename="Conferir reason ${REASON_ESPERADO}">
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.reason}</arg>
 <arg>${REASON_ESPERADO}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:21.044" endtime="20211202 03:21:21.044"/>
+<status status="PASS" starttime="20220902 17:55:39.004" endtime="20220902 17:55:39.005"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:21.043" endtime="20211202 03:21:21.044"/>
+<status status="PASS" starttime="20220902 17:55:39.003" endtime="20220902 17:55:39.005"/>
 </kw>
 <kw name="Conferir o body da resposta" library="Resources">
 <kw name="Should Not Be Empty" library="BuiltIn">
 <arg>item</arg>
 <arg>${RESPOSTA.json()}[message]</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20211202 03:21:21.046" level="INFO">Length is 4</msg>
-<status status="PASS" starttime="20211202 03:21:21.045" endtime="20211202 03:21:21.046"/>
+<msg timestamp="20220902 17:55:39.007" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20220902 17:55:39.006" endtime="20220902 17:55:39.007"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["code"]}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20211202 03:21:21.047" level="INFO">Argument types are:
+<msg timestamp="20220902 17:55:39.009" level="INFO">Argument types are:
 &lt;class 'int'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20211202 03:21:21.046" endtime="20211202 03:21:21.047"/>
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220902 17:55:39.007" endtime="20220902 17:55:39.009"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${RESPOSTA.json()["type"]}</arg>
 <arg>unknown</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20211202 03:21:21.047" endtime="20211202 03:21:21.047"/>
+<status status="PASS" starttime="20220902 17:55:39.010" endtime="20220902 17:55:39.010"/>
 </kw>
-<status status="PASS" starttime="20211202 03:21:21.045" endtime="20211202 03:21:21.047"/>
+<status status="PASS" starttime="20220902 17:55:39.006" endtime="20220902 17:55:39.010"/>
 </kw>
 <tag>DEL</tag>
-<status status="PASS" starttime="20211202 03:21:20.296" endtime="20211202 03:21:21.048"/>
+<status status="PASS" starttime="20220902 17:55:38.332" endtime="20220902 17:55:39.011"/>
 </test>
-<status status="PASS" starttime="20211202 03:21:17.953" endtime="20211202 03:21:21.050"/>
+<status status="PASS" starttime="20220902 17:55:35.994" endtime="20220902 17:55:39.014"/>
 </suite>
 <statistics>
 <total>
