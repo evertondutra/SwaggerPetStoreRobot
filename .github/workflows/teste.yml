@@ -3,6 +3,7 @@ neme: Teste de API
 on:
   push:
     branches: [main]
+    branches: [pipeline]
   pull_request:
     branches: [main]
   schedule:
