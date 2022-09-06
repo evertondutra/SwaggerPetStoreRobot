@@ -27,4 +27,4 @@ WEB Testing in Chrome:
         - google-chrome --version
         - chromedriver --version
     script:
-        - robot -d ./results -v BROWSER:headlesschrome TestSitePractice.robot
+        - robot -d logs -v BROWSER:headlesschrome testUserPet.robot
