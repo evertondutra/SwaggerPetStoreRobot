@@ -11,18 +11,10 @@ on:
 
 stages:
   - Acceptance Tests
-
-# Job Linux Fedora - execução dos testes sem docker
-WEB Testing in Chrome:
     stage: Acceptance Tests
     image: fedora:31
     tags:
         - docker
-    artifacts:
-        when: always
-        paths:
-            - ./results
-        expire_in: 1 week
     before_script:
         - cat /etc/*-release
         - dnf upgrade -y >/dev/null && echo OK
