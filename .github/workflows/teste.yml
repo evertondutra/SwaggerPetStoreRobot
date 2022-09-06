@@ -11,7 +11,6 @@ on:
 
 stages:
   - Acceptance Tests
-    image: fedora:31
     tags:
         - docker
     before_script:
