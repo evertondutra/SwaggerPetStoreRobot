@@ -4,8 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-    matrix:
-      py-version: ['3.8', '3.9', '>=3.10']
+      matrix:
+        py-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-python@v3
