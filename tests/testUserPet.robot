@@ -30,9 +30,9 @@ Alterar um usuário
     Conferir reason OK
     Conferir o body da resposta
 
-# Deletar um usuário 
-#     [Tags]        DEL
-#     Deletar um usuário ${NOME_USUARIO}
-#     Conferir o status code 200
-#     Conferir reason OK
-#     Conferir o body da resposta
+Deletar um usuário 
+    [Tags]        DEL
+    Deletar um usuário ${NOME_USUARIO}
+    Conferir o status code 200
+    Conferir reason OK
+    Conferir o body da resposta
