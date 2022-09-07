@@ -1,18 +1,21 @@
-name: Test
+name: Teste de API
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+    matrix:
+      py-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-python@v3
         with:
-          python-version: '3.10'
-      - name: Robot
+          py-version: ${{ matrix.py-version}}
+      - name: Instalando Robot
         run: sudo pip install robotframework
-      - name: RequestsLibrary
+      - name: Instalando RequestsLibrary
         run: sudo pip install robotframework-requests
-      - name: JSONLibrary
+      - name: Instalando JSONLibrary
         run: sudo pip install robotframework-jsonlibrary
 
       - name: Rodando o teste
