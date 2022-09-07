@@ -7,7 +7,7 @@ jobs:
     # criando uma execução ao mesmo tempo nas versões declaradas
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'windows-11']
+        os: ['ubuntu-latest', 'windows-latest']
         py-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
@@ -16,11 +16,11 @@ jobs:
         # aqui é colocado as versões do python para rodar como matrix
           python-version: ${{ matrix.py-version}}
       - name: Instalando Robot
-        run: sudo pip install robotframework
+        run: pip install robotframework
       - name: Instalando RequestsLibrary
-        run: sudo pip install robotframework-requests
+        run: pip install robotframework-requests
       - name: Instalando JSONLibrary
-        run: sudo pip install robotframework-jsonlibrary
+        run: pip install robotframework-jsonlibrary
 
       - name: Rodando o teste
         run: robot -d logs tests/testUserPet.robot
