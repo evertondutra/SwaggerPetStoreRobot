@@ -2,10 +2,12 @@ name: Teste de API
 on: [push]
 jobs:
   test:
-    runs-on: ubuntu-latest
+      # criando uma execução ao mesmo tempo nas máquinas
+    runs-on: ${{ matrix.os}}
     # criando uma execução ao mesmo tempo nas versões declaradas
     strategy:
       matrix:
+        os: ['ubuntu-latest', 'windows-11']
         py-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
