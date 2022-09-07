@@ -11,6 +11,6 @@ jobs:
       - name: Robot
         run: sudo pip install robotframework
       - name: RequestsLibrary
-        run: sudo pip install robotframework-RequestsLibrary
+        run: sudo pip install requests
       # - name: JSONLibrary
       #   run: sudo pip install JSONLibrary
