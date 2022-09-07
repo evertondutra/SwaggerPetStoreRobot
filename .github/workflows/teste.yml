@@ -5,12 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        py-version: ['3.8', '3.9', '>=3.10']
+        python-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-python@v3
         with:
-          py-version: ${{ matrix.py-version}}
+          python-version: ${{ matrix.py-version}}
       - name: Instalando Robot
         run: sudo pip install robotframework
       - name: Instalando RequestsLibrary
