@@ -9,8 +9,8 @@ jobs:
         with:
           python-version: '3.10'
       - name: Robot
-        uses: pip install robotframework
+        run: pip install robotframework
       - name: RequestsLibrary
-        uses: pip install RequestsLibrary
+        run: pip install RequestsLibrary
       - name: JSONLibrary
-        uses: pip install JSONLibrary
+        run: pip install JSONLibrary
