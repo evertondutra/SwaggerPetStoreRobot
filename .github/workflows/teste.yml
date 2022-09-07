@@ -14,3 +14,6 @@ jobs:
         run: sudo pip install requests
       - name: JSONLibrary
         run: sudo pip install robotframework-jsonlibrary
+
+      - name: Rodando o teste
+        run: robot -d logs .\tests\testUserPet.robot
