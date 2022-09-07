@@ -10,7 +10,7 @@ jobs:
           python-version: '3.10'
       - name: Robot
         run: sudo pip install robotframework
-      - name: RequestsLibrary
-        run: sudo pip install RequestsLibrary
+      # - name: RequestsLibrary
+      #   run: sudo pip install RequestsLibrary
       # - name: JSONLibrary
       #   run: sudo pip install JSONLibrary
