@@ -3,13 +3,15 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    # criando uma execução ao mesmo tempo nas versões declaradas
     strategy:
       matrix:
-        python-version: ['3.8', '3.9', '>=3.10']
+        py-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-python@v3
         with:
+        # aqui é colocado as versões do python para rodar como matrix
           python-version: ${{ matrix.py-version}}
       - name: Instalando Robot
         run: sudo pip install robotframework
