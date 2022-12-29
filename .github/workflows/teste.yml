@@ -7,7 +7,7 @@ jobs:
     # criando uma execução ao mesmo tempo nas versões declaradas
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ['ubuntu-latest', 'windows-latest']
         py-version: ['3.8', '3.9', '>=3.10']
     steps:
       - uses: actions/checkout@master
