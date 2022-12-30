@@ -16,7 +16,7 @@ jobs:
         # aqui é colocado as versões do python para rodar como matrix
           python-version: ${{ matrix.py-version}}
       - name: Instalando Robot
-        uses: actions/checkout@master
+        uses: joonvena/robotframework-docker-action@v1.1
       - name: Instalando RequestsLibrary
         run: pip install robotframework-requests
       - name: Instalando JSONLibrary
