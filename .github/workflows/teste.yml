@@ -16,6 +16,6 @@ jobs:
         # aqui é colocado as versões do python para rodar como matrix
           python-version: ${{ matrix.py-version}}
       - name: Instalando Robot
-        run: pip install robotframework
+        run: pip install -r requirements.txt
       - name: Rodando o teste
         run: robot -d logs tests/testUserPet.robot
