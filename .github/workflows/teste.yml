@@ -17,10 +17,5 @@ jobs:
           python-version: ${{ matrix.py-version}}
       - name: Instalando Robot
         run: pip install robotframework
-      - name: Instalando RequestsLibrary
-        run: pip install robotframework-requests
-      - name: Instalando JSONLibrary
-        run: pip install robotframework-jsonlibrary
-
       - name: Rodando o teste
         run: robot -d logs tests/testUserPet.robot
