@@ -15,5 +15,7 @@ jobs:
         with:
         # aqui é colocado as versões do python para rodar como matrix
           python-version: ${{ matrix.py-version}}
-      - name: Rodando o teste
-        run: robot -d logs tests/testUserPet.robot
+      - uses: tarathep/robotframework-github-action@v1.0
+        with:
+          tests_dir: tests/testUserPet.robot
+
